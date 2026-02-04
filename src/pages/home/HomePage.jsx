@@ -6,6 +6,7 @@ import CadastroDeInstrutor from '../../components/CadastroDeInstrutor.jsx';
 import CadastroDeTurma from '../../components/CadastroDeTurma.jsx';
 import { Menu, GraduationCap, User, BookOpen, UserCheck, Users, Calendar } from 'lucide-react';
 import '../../styles/home.css';
+import RegisterUserPage from '../register/RegisterUserPage.jsx';
 
 
 const HomePage = () => {
@@ -29,6 +30,8 @@ const HomePage = () => {
     switch (currentPage) {
       case 'cronograma':
         return <CronogramaPage onNavigateHome={navigateHome} />;
+      case 'Cadastro-de-usuario':
+        return <RegisterUserPage onNavigateHome={navigateHome} />;
       case 'unidades-curriculares':
         return <UCSRegistrationPage onNavigateHome={navigateHome} />;
       case 'cursos':
@@ -213,6 +216,16 @@ const MainHomePage = ({ onNavigate }) => {
             <Calendar size={28} />
           </div>
           <h3 className="menu-title">Cronograma</h3>
+          <p className="menu-description">
+            Visualize e gerencie o cronograma de aulas
+          </p>
+        </div>
+
+        <div className="menu-card" onClick={() => onNavigate('Cadastro-de-usuario')}>
+          <div className="menu-icon teal">
+            <UserCheck size={28} />
+          </div>
+          <h3 className="menu-title">Cadastro de Usuário</h3>
           <p className="menu-description">
             Visualize e gerencie o cronograma de aulas
           </p>
